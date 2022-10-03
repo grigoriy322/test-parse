@@ -125,6 +125,9 @@ fun main() {
     * suspend fun dataLayerStorage(): List<SomeData> = withContext(Dispatchers.IO) {
     *   try {
     *       ...
+    *          parsing
+    *       ...
+    *       return@withContext resultList.ifEmpty { throw IllegalArgumentException() }
     *   } catch (e: Exception) {
     *           Log.e("aaaa", e.message, e)
     *           listOf<SomeData>(...)
